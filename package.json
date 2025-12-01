@@ -1,0 +1,24 @@
+{
+  "name": "poc-apicurio",
+  "module": "src/index.ts",
+  "scripts": {
+    "dev:subscriber": "bun run src/index.ts -- role=subscriber",
+    "dev:publisher": "bun run src/index.ts -- role=publisher",
+    "register:schema": "bun run scripts/register-schema.ts",
+    "codegen": "bun run scripts/generate-types.ts",
+    "ci:check-schemas": "bash scripts/check-schemas.sh",
+    "demo:e2e": "bash scripts/demo-e2e.sh"
+  },
+  "devDependencies": {
+    "@types/amqplib": "^0.10.8",
+    "@types/bun": "latest",
+    "json-schema-to-typescript": "^15.0.4",
+    "typescript": "^5.9.3"
+  },
+  "dependencies": {
+    "ajv": "^8.17.1",
+    "ajv-formats": "^3.0.1",
+    "amqplib": "^0.10.9",
+    "tslog": "^4.10.2"
+  }
+}
